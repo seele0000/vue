@@ -1,0 +1,34 @@
+<div class="home">
+	<div class="group">
+		<p class="title">
+			<span>正在热映</span>
+			<router-link class="more" to="/list/in_theaters">更多>></router-link>
+		</p>
+		<ul class="list clearfix">
+			<li v-for="item in theaterList" :key="item.id">
+				<div class="img-box">
+					<!-- <img :src="item.images.large" alt=""> -->
+					<!-- 处理部分图片403 -->
+					<img class="pic" :src="'https://images.weserv.nl/?url=' + item.images.large.substring( 7 )" alt="">
+					<router-link class="link" :to="/detail/+item.id"></router-link>
+				</div>
+				<p :title="item.title">{{item.title}}</p>
+			</li>
+		</ul>
+    </div>
+    <div class="group">
+		<p class="title">
+			<span>Top250</span>
+			<router-link class="more" to="/list/top250">更多>></router-link>
+		</p>
+		<ul class="list clearfix">
+			<li v-for="item in top250List" :key="item.id">
+				<div class="img-box">
+					<img class="pic" :src="'https://images.weserv.nl/?url=' + item.images.large.substring( 7 )" alt="">
+					<router-link class="link" :to="/detail/+item.id"></router-link>
+				</div>
+				<p :title="item.title">{{item.title}}</p>
+			</li>
+		</ul>
+    </div>
+</div>

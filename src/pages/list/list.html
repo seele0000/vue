@@ -1,0 +1,30 @@
+<div class="list-page">
+	<p class="title">{{title}}</p>
+	<ul class="list clearfix">
+		<li v-for="item in list" :key="item.id">
+			<div class="img-box">
+				<img class="pic" :src="'https://images.weserv.nl/?url=' + item.images.large.substring( 7 )" alt="">
+				<router-link class="link" :to="/detail/+item.id"></router-link>
+			</div>
+			<p class="item-title" :title="item.title">{{item.title}}</p>
+			<p>
+				主演：
+				<span v-for="castItem in item.casts" :key="castItem.id">{{castItem.name}}</span>
+			</p>
+			<p>
+				导演：
+				<span v-for="directorItem in item.directors" :key="directorItem.id">{{directorItem.name}}</span>
+			</p>
+		</li>
+    </ul>
+    <div class="paging">        
+        <template v-for="index in totalPageN">
+            <button v-if="index == 1" :class="{cur: index == curPageN}" :key="index" @click="getList(1)">{{index}}</button>
+            <button v-else-if="index == totalPageN" :class="{cur: index == curPageN}" :key="index" @click="getList(totalPageN)">{{totalPageN}}</button>
+            <button v-else-if="index == curPageN+2 || index == curPageN+1 || index == curPageN || index == curPageN-1" :class="{cur: index == curPageN}" :key="index" @click="getList(index)">{{index}}</button>
+            <button v-else-if="index == curPageN-2 || index == curPageN+3" :key="index">...</button>            
+            <button v-else v-show=false :key="index"></button>
+        </template>
+        <span>共{{totalMovieN}}条</span>
+    </div>
+</div>
