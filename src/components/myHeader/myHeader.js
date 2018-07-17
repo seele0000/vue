@@ -6,6 +6,16 @@ export default {
       msg: ''
     };
   },
+  props: {
+    loginFlag: {
+      type: Boolean,
+      required: true 
+    },
+    userName: {
+      type: String,
+      required: true 
+    }
+  },
   watch:{
     $route(to,from){
         console.log(to.path, from.path);
@@ -32,6 +42,10 @@ export default {
         console.log()
       }
       _this.msg = '';
+    },
+    register (type) {
+      console.log('head',type)
+      this.$emit('showRegister', type)
     }
   }
 };

@@ -4,6 +4,10 @@ export default {
   data() {
     return {
       id: '',
+      commentList: [
+        {id: 1, name: 'tom', msg: 'haha'},
+        {id: 2, name: 'Lucy', msg: '还好吧'}
+      ],
       obj: {}
     };
   },

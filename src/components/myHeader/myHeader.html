@@ -1,6 +1,13 @@
 <div class="my-header">
     <div class="banner">
         <h1>welcom to my movie project</h1>
+        <div class="register-box">
+          <div v-if="loginFlag">
+            <button @click="register('in')">登录</button>
+            <button @click="register('new')">注册</button>
+          </div>
+          <p v-else>{{userName}}</p>          
+        </div>
     </div>
     <div class="nav">
         <div class="wrapper clearfix">

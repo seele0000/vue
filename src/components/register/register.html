@@ -1,0 +1,21 @@
+<div class="register">
+  <div class="mask" @click="closeRegister"></div>
+  <div class="box">
+    <div class="tab">
+      <span class="tab-item" :class="{cur: tabType == 'in'}" @click="tabType = 'in'">登录</span>
+      <span class="tab-item" :class="{cur: tabType == 'new'}" @click="tabType = 'new'">注册</span>
+    </div>
+    <div class="form">
+      <p>用户{{tabType == 'in' ? '登录' : '注册'}}</p>
+      <label for="">
+        <p>用户名：</p>
+        <input type="text">
+      </label>
+      <label for="">
+        <p>密码：</p>
+        <input type="password">
+      </label>
+      <button>提交</button>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <my-header></my-header>
+    <my-header v-on:showRegister="changeRegister" v-bind:loginFlag="loginFlag" v-bind:userName="userName"></my-header>
+    <register v-show="isShowRegister" v-on:closeRegister="changeRegister" v-bind:registerType="registerType"></register>
     <div class="wrapper">
       <router-view></router-view>
     </div>
@@ -11,10 +12,20 @@
 <script>
   import axios from 'axios';
   import myHeader from './components/myHeader/myHeader.vue';
+  import register from './components/register/register.vue';
   export default {
     name: 'App',
+    data () {
+      return {
+        isShowRegister: false,
+        loginFlag: true,
+        registerType: '',
+        userName: 'me'
+      }
+    },
     components: {
-      myHeader
+      myHeader,
+      register
     },
     created () {
       this.equipmentTest();
@@ -37,6 +48,14 @@
           let fontSizeH = document.documentElement.clientHeight / (layout.h / (layout.w / layout.c));
           let fontSize = Math.min(fontSizeW, fontSizeH);
           document.documentElement.style.fontSize = fontSize + 'px';
+        }
+      },
+      changeRegister (type) {
+        if (type) {
+          this.isShowRegister = true;
+          this.registerType = type;
+        } else {
+          this.isShowRegister = false;
         }
       }
     }

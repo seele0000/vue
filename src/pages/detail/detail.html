@@ -37,4 +37,14 @@
             </li>
         </ul>
     </div>
+    <div class="comment-box">
+      <p class="title">评论</p>
+      <ul>
+        <li v-if="commentList.length == 0">无</li>
+        <li v-else="commentList" v-for="(item, index) in commentList">
+          <p>{{index+1}}楼：{{item.name}}</p>
+          <div>{{item.msg}}</div>
+        </li>
+      </ul>
+    </div>
 </div>
