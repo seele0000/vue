@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import home from '../pages/home/home.vue';
 import list from '../pages/list/list.vue';
 import detail from '../pages/detail/detail.vue';
+import searchList from '../pages/searchList/searchList.vue';
 
 Vue.use(Router);
 
@@ -19,5 +20,9 @@ export default new Router({
 		path: '/detail/:id',
 		name: 'detail',
 		component: detail
+	}, {
+		path: '/searchList/:q',
+		name: 'searchList',
+		component: searchList
 	}]
 });

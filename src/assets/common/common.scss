@@ -3,7 +3,7 @@ html,body {
   margin: 0;
 }
 
-p,ul,li,button,input {
+div,p,ul,li,button,input,a {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -19,7 +19,7 @@ ul li {
 }
 a {
   text-decoration: none;
-  color: #fff;
+  color: #000;
   outline: none;
 }
 
@@ -50,4 +50,8 @@ img {
 	color: #2c3e50;
 }
 
-
+@media (max-width: 768px) { 
+  #app {
+    font-size: 0.25rem;
+  }
+}

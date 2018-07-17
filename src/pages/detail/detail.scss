@@ -61,3 +61,35 @@
         }
     }
 }
+
+@media (max-width: 768px) { 
+  .movie-detail {
+    padding: 0 0.2rem;
+    .info-box {
+      .title {
+        font-size: 0.52rem;
+      }
+      .img-box {
+        width: 25%;
+      }
+    }
+    .summary-box p {
+      padding: 0.3rem 0;
+      font-size: 0.44rem;
+    }
+    .cast-box {
+      > p {
+        padding: 0.3rem 0;
+        font-size: 0.44rem;
+      }
+      li {
+        width: 1.5rem;
+        margin-right: 0.26rem;
+        margin-bottom: 0.3rem;
+        img {
+          height: 2.1rem;
+        }
+      }
+    }  
+  }
+}

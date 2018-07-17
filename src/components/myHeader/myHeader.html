@@ -1,15 +1,15 @@
-<div>
+<div class="my-header">
     <div class="banner">
         <h1>welcom to my movie project</h1>
     </div>
     <div class="nav">
         <div class="wrapper clearfix">
-          <router-link class="nav-item" to="/">首页</router-link>
-          <router-link class="nav-item" to="/list/in_theaters">正在热映</router-link>
-          <router-link class="nav-item" to="/list/top250">Top250</router-link>
+          <router-link class="nav-item" :class="{cur: pageType == 'index'}" to="/">首页</router-link>
+          <router-link class="nav-item" :class="{cur: pageType == 'in_theaters'}" to="/list/in_theaters">正在热映</router-link>
+          <router-link class="nav-item" :class="{cur: pageType == 'top250'}" to="/list/top250">Top250</router-link>
           <div class="search-box clearfix">
-            <input type="text">
-            <button>search</button>
+            <input type="text" v-model="msg">
+            <button class="btn" @click="searchFn">search</button>
           </div>
         </div>
     </div>

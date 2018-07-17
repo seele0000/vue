@@ -54,3 +54,24 @@
         }
     }
 }
+@media (max-width: 768px) { 
+  .list-page {
+    .title {
+      font-size: 0.5rem;
+    }
+    .list li {
+      width: 50%;
+      height: 5rem;
+      padding: 0 0.3rem;
+      .img-box img {
+        height: 3.6rem;
+      }
+      .item-title {
+        font-size: 0.3rem;
+      }
+      p {
+        font-size: 0.2rem;
+      }
+    }
+  }
+}

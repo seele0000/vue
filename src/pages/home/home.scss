@@ -44,3 +44,19 @@
 		white-space: nowrap;
 	}
 }
+
+@media (max-width: 768px) { 
+  .home {
+    padding: 0 0.3rem;
+    width: 100%;
+    overflow: hidden;
+    .list {
+      width: 100%;
+      overflow-x: auto;
+      .img-box {
+        width: 2.5rem;
+        height: 3.8rem;
+      }
+    }    
+  }
+}

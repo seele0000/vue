@@ -28,7 +28,7 @@ export default {
 			let _this = this;
 			let curStart = (start == 1) ? 0 : ((start - 1) * _this.count);
 			_this.curPageN = start;
-			axios.get('/api/movie/' + _this.type + '?start='+ curStart +'&count=' + _this.count)
+			axios.get(process.env.API_ROOT + '/v2/movie/' + _this.type + '?start='+ curStart +'&count=' + _this.count)
 				.then(function (response) {
 					_this.title = response.data.title;
 					_this.totalMovieN = response.data.total;

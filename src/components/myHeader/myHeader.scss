@@ -1,15 +1,23 @@
+.my-header {
+  width: 100%;
+}
 .banner {
     padding: 10px;
     background-color: #ccc;
 }
 .nav {
-    padding: 15px 0;
     background-color: green;
     color: #fff;
     text-align: left;
     .nav-item {
+      float: left;
+      padding: 10px 40px 10px 10px;
       padding-right: 40px;
       line-height: 27px;
+      color: #fff;
+      &.cur {
+        background: #285602;
+      }
     }
 }
 .wrapper {
@@ -19,6 +27,7 @@
 .search-box {
   float: right;
   height: 27px;
+  margin-top: 10px;
   input {
     float: left;
     height: 100%;
@@ -26,12 +35,34 @@
     border-radius: 6px 0 0 6px;
     padding: 0 5px;
   }
-  button {
+  .btn {
     float: left;
     height: 100%;
     border: 1px solid #ccc;
     border-radius: 0 6px 6px 0;
+    line-height: 25px;
     padding: 0 10px;
     background-color: #ccc;
+  }
+}
+
+@media (max-width: 768px) { 
+  .banner h1 {
+    font-size: 0.4rem;
+  }
+  .wrapper {
+    width: 100%;
+  }
+  .nav .nav-item {
+    font-size: 0.3rem;
+    padding: 0.1rem 0.4rem 0.1rem 0.1rem;
+  }
+  .search-box {
+    width: 100%;
+    background-color: #fff;
+    padding-left: 0.1rem;
+    padding-top: 0.2rem;
+    height: 0.74rem;
+    margin-top: 0;
   }
 }

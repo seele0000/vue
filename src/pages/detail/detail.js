@@ -14,7 +14,7 @@ export default {
   methods: {
     getDetail () {
       let _this = this;
-      axios.get('/api/movie/subject/' + this.id)
+      axios.get(process.env.API_ROOT + '/v2/movie/subject/' + this.id)
         .then(function (response) {
           _this.obj = response.data;
           console.log(response);

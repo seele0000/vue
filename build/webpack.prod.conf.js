@@ -71,7 +71,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       minify: {
         removeComments: true,
         collapseWhitespace: true,
-        removeAttributeQuotes: true
+        removeAttributeQuotes: false // 是否删除build后index文件引用路径的引号
         // more options:
         // https://github.com/kangax/html-minifier#options-quick-reference
       },
