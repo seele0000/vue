@@ -1,4 +1,6 @@
 import axios from 'axios';
+import in_theater_list from '../../assets/data/in_theater_list.json';
+import top250_list from '../../assets/data/top250_list.json';
 export default {
   name: 'list',
   data () {
@@ -37,9 +39,25 @@ export default {
 					console.log(response.data);
 				})
 				.catch(function (error) {
-					console.log(error);
+          console.log(error);
+          _this.localData(curStart);
 				});
-		},
+    },
+    localData (start) {
+      let _this = this;
+      console.log('localData')
+      if(_this.type == 'in_theaters') {
+        _this.title = '正在上映的电影-北京';
+        _this.totalMovieN = in_theater_list.length;
+        _this.totalPageN = _this.calPage(in_theater_list.length);
+        _this.list = in_theater_list.slice(start, start + _this.count);
+      } else if (_this.type == 'top250') {
+        _this.title = '豆瓣电影Top250';
+        _this.totalMovieN = top250_list.length;
+        _this.totalPageN = _this.calPage(top250_list.length);
+        _this.list = top250_list.slice(start, start + _this.count);
+      }
+    },
 		calPage (n) {
 			let _this = this;
 			return Math.ceil(n/_this.count);

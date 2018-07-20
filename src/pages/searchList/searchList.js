@@ -1,4 +1,7 @@
 import axios from 'axios';
+import in_theater_list from '../../assets/data/in_theater_list.json';
+import top250_list from '../../assets/data/top250_list.json';
+
 export default {
   name: 'searchList',
   data () {
@@ -28,8 +31,22 @@ export default {
           console.log(response.data);
         })
         .catch(function (error) {
-          console.log(error);
+          // console.log(error);
+          _this.list = _this.localData(queryMsg);
         });
+    },
+    localData (queryMsg) {
+      let _this = this;
+      let list = in_theater_list.concat(top250_list);
+      let result = [];
+      console.log(list.length)
+      for(let i=0; i<list.length; i++) {
+        if(list[i].title == queryMsg) {
+          result.push(list[i]);
+          console.log(result)
+          return result;
+        }
+      }
     }
   }
 };

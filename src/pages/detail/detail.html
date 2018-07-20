@@ -22,7 +22,7 @@
     </div>
     <div class="summary-box">
         <p>{{obj.title}}的剧情简介：</p>
-        <div class="content">{{obj.summary}}</div>
+        <div class="content">{{obj.summary || '哇咔咔，本地没有哦'}}</div>
     </div>
     <div class="cast-box">
         <p>{{obj.title}}的影人：</p>
@@ -42,9 +42,13 @@
       <ul>
         <li v-if="commentList.length == 0">无</li>
         <li v-else="commentList" v-for="(item, index) in commentList">
-          <p>{{index+1}}楼：{{item.name}}</p>
+          <p>{{index+1}}楼：{{item.name}} <span>{{item.time}}</span></p>
           <div>{{item.msg}}</div>
         </li>
       </ul>
+      <div class="user-comment clearfix">
+        <textarea v-model="commentMsg"></textarea>
+        <button @click="submitComment">提交</button>
+      </div>
     </div>
 </div>

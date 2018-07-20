@@ -56,9 +56,16 @@
 }
 
 @media (max-width: 768px) { 
-  .banner h1 {
-    font-size: 0.4rem;
+  .banner {
+    h1 {
+      font-size: 0.4rem;
+    }
+    .register-box {
+      right: 50%;
+      transform: translateX(50%);
+    }
   }
+   
   .wrapper {
     width: 100%;
   }

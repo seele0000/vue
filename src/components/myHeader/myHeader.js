@@ -29,6 +29,14 @@ export default {
         } else {
           this.pageType = '';
         }
+    },
+    loginFlag: function () {
+      // this.tabType = this.loginFlag;
+      console.log(this.loginFlag);
+    },
+    userName: function () {
+      // this.tabType = this.loginFlag;
+      console.log(this.loginFlag);
     }
   },
   methods: {
