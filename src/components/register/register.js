@@ -71,6 +71,7 @@ export default {
         })
         .then(function (response) {
           console.log(response.data);
+          alert(response.data.msg)
           _this.flag = true;
           _this.result(response.data);
         })

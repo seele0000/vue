@@ -9,11 +9,11 @@
       <p>用户{{tabType == 'in' ? '登录' : '注册'}}</p>
       <label for="">
         <p>用户名：</p>
-        <input type="text" v-model="userName">
+        <input type="text" v-model="userName" placeholder="由字母和数字组成">
       </label>
       <label for="">
         <p>密码：</p>
-        <input type="password" v-model="userPassword">
+        <input type="password" v-model="userPassword" placeholder="至少6个字符">
       </label>
       <button @click="submit">提交</button>
     </div>
